@@ -4,7 +4,6 @@
 		public function __construct(){
 			include 'header.php';
 			include 'top_menu.php';
-			
 		} 
 		
 		public function __destruct(){
@@ -24,6 +23,5 @@
 		public function denied(){
 			include 'error.php'; 
 		}
-		
 	}
 ?>

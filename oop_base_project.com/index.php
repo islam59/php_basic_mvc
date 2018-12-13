@@ -4,7 +4,6 @@
 	}else{
 		$pg = $_GET['page'];
 	}
-
 ?>
 <?php 
 include 'student.php';
