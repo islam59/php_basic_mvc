@@ -4,10 +4,9 @@
 
   $DB = new Database(); 
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html lang="en">
   <head>
+<html lan
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,5 +27,5 @@
   <body>
 	<div class="container">
 <!----------------------------------------------->
-		<h1>CRUD System — <?php echo $pg; ?></h1><hr/>
+		<h1>CRUD System  — <?php echo $pg; ?></h1><hr/>
 <!----------------------------------------------->
