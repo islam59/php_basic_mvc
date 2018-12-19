@@ -1,25 +1,40 @@
+<?php
+	if(isset($_POST['cosmatics'])){
+		$BandName= $_POST['BandName'];
+		$Types = $_POST['Types'];
+		$details = $_POST['details'];
+		$Taka = $_POST['Taka'];
+
+		
+		if(empty($BandName) OR empty($Types) OR empty($Details) OR empty($Taka)){
+			$msg = "Filed Must Not Empty !"; 
+			header('Location:?page=Cosmatics&msg='.$msg); 
+		}
+	}
+?>
 <!----------------------------------------------->	
 <div class="" style="min-height:400px;  ">	
 	<div class="col-md-4">
 <!------------------------------------>
-<form>
+<form action="?page=Cosmatics" method="POST">
   <div class="form-group">
-    <label for="exampleInputEmail1">Company Name</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Company Name">
+    <label for="exampleInputEmail1">BrandName</label>
+    <input name="BrandName" type="text" class="form-control" id="exampleInputEmail1" placeholder="Brand Name">
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail1">Model</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Model Name">
+    <label for="exampleInputEmail1">Types</label>
+    <input name="Types" type="text" class="form-control" id="exampleInputEmail1" placeholder="Types">
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Description</label>
-    <textarea class="form-control"></textarea>
+    <textarea name="details" class="form-control"></textarea>
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail1">Price</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Price">
+    <label for="exampleInputEmail1">Taka</label>
+    <input name="Taka" type="text" class="form-control" id="exampleInputEmail1" placeholder="Taka">
   </div>
-  <button type="submit" class="btn btn-primary">Save</button>
+  <button name="cosmatics" type="submit" class="btn btn-primary">Save</button>
+  <?php if(isset($_GET['msg'])){ echo $_GET['msg']; } ?>
 </form>
 <!------------------------------------>
 	</div>	
@@ -28,9 +43,9 @@
 <table class="table table-bordered table-striped">
 	<tr>
 		<th>SL</th>
-		<th>Company</th>
-		<th>Model</th>
-		<th>Price</th>
+		<th>Brand Name</th>
+		<th>Types</th>
+		<th>Taka</th>
 		<th style="width:28%;">Action</th>
 	</tr>
 	<tr>

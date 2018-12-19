@@ -1,4 +1,18 @@
-<?php 
+
+
+<?php
+	if(isset($_GET['delid'])){
+		$delid = $_GET['delid']; 
+		$qry_delete_mobile = "DELETE FROM tb_mobile WHERE id=$delid";
+		$result = $DB->delete($qry_delete_mobile); 
+		if($result){
+			$msg = '<span style="color:red;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Deleted Done !</span>';
+			header('Location:index.php?page=Mobile&msg='.$msg);
+		}
+	}
+?>
+
+<?php /*INSERT NEW DATA */
 	if(isset($_POST['mobile'])){
 		$company = $_POST['company']; 
 		$model = $_POST['model']; 
@@ -24,7 +38,7 @@
 			}
 
 		}
-	}
+	}//END OF DATA INSERTING..
 ?>
 
 <!----------------------------------------------->	
@@ -79,7 +93,7 @@
 		<td>
 			<a href="" class="btn btn-info btn-sm" data-toggle="modal" data-target="#mobile_view<?php echo $mobile['id']; ?>">View</a>
 			<a href="" class="btn btn-warning btn-sm">Update</a>
-			<a href="" class="btn btn-danger btn-sm">Remove</a>
+			<a href="?page=Mobile&delid=<?php echo $mobile['id']; ?>" class="btn btn-danger btn-sm">Remove</a>
 		</td>
 	</tr>
 <!-------------------------------------------------------------->

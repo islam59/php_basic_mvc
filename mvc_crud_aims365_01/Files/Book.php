@@ -63,11 +63,14 @@
 	$book_list_qry = "SELECT * FROM tb_book";
 	$result = $DB->select($book_list_qry); 
 	if($result){
-		while($book_data = $result->fetch_array())
-		{
+		$i=0;
+		while($book_data = $result->fetch_array()){
+			$i++; 
+
 ?>
+		
 	<tr>
-		<td>01</td>
+		<td><?php echo $i; ?></td>
 		<td><?php echo $book_data['book_name']; ?></td>
 		<td><?php echo $book_data['author_name']; ?></td>
 		<td><?php echo $book_data['published_date']; ?></td>
