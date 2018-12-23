@@ -1,3 +1,4 @@
+
 <?php 
 	if(isset($_POST['laptop'])){
 		$company = $_POST['company']; 
@@ -79,7 +80,7 @@
 		<td>
 			<a href="" class="btn btn-info btn-sm" data-toggle="modal" data-target="#mobile_view<?php echo $mobile['id']; ?>">View</a>
 			<a href="" class="btn btn-warning btn-sm">Update</a>
-			<a href="" class="btn btn-danger btn-sm">Remove</a>
+			<a href="?page=Laptop$deild=<?php echo $Laptop?>" class="btn btn-danger btn-sm">Remove</a>
 		</td>
 	</tr>
 <!-------------------------------------------------------------->
