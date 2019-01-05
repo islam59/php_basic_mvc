@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2018 at 02:37 PM
+-- Generation Time: Jan 05, 2019 at 01:30 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -66,7 +66,51 @@ CREATE TABLE `tb_car` (
 INSERT INTO `tb_car` (`id`, `company`, `model`, `details`, `price`) VALUES
 (1, 'samsung', 'SL410', 'dfaf', 'afdaf'),
 (2, 'adfadfa', 'adafda', 'adfafdasd', 'adsfafd'),
-(3, 'sfgs', 'sfgs', 'sgfs', '124356787');
+(3, 'sfgs', 'sfgs', 'sgfs', '124356787'),
+(4, 'Bmw', 'qurID', 'n/a', '11111111'),
+(5, 'marsentic', 'Hlw-123', 'n/a', '2367467'),
+(6, 'samsung', 'SL410', 'asdf', '1000000'),
+(7, 'samsung', 'SL410', 'n/sa', '21212'),
+(8, 'saiful car', 'rad ', 'aaa888', '15500'),
+(9, 'samsung', 'asdf', 'afd', 'adsfafd'),
+(10, 'anda', 'chaina', ']]]]', '50');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_cosmatics`
+--
+
+CREATE TABLE `tb_cosmatics` (
+  `id` int(11) NOT NULL,
+  `Brand Name` varchar(255) NOT NULL,
+  `types` varchar(255) NOT NULL,
+  `details` text NOT NULL,
+  `Taka` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_elc`
+--
+
+CREATE TABLE `tb_elc` (
+  `id` int(11) NOT NULL,
+  `company` varchar(255) NOT NULL,
+  `model` varchar(255) NOT NULL,
+  `details` text NOT NULL,
+  `price` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_elc`
+--
+
+INSERT INTO `tb_elc` (`id`, `company`, `model`, `details`, `price`) VALUES
+(1, 'afdlkhdaf', 'SL410', 'dafa', '2342'),
+(2, 'samsung', 'SL410', 'dsf', '2345'),
+(3, 'hoye gesse', 'SL410', 'sdfa', '12342546');
 
 -- --------------------------------------------------------
 
@@ -110,15 +154,44 @@ CREATE TABLE `tb_mobile` (
 --
 
 INSERT INTO `tb_mobile` (`id`, `company`, `model`, `details`, `price`) VALUES
-(1, 'SONY', 'XPERIA U', 'N/A', '15500'),
 (2, 'XIOMI', 'NOTE 2', 'N/A', '12300'),
-(7, 'samsung 1', '12121', '12121', '21212'),
-(10, 'NOKIA', 'ASA', 'N/A', '2500'),
-(11, 'LG', 'LB-416024', 'N/A', '21600'),
-(12, 'iTEL', 'IT2170', 'N/A', '1000'),
-(13, 'WINMAX', 'X870', 'N/A', '6000'),
-(14, 'samsung', '1424', 'n/a', '1200'),
-(15, 'aa', 'adfsa', 'n/a', ' 1000');
+(7, 'samsung 1', '12121', '    	 12121    ', '21212'),
+(10, 'NOKIA', 'ASA', '    	 N/A    ', '2500');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_tv`
+--
+
+CREATE TABLE `tb_tv` (
+  `id` int(11) NOT NULL,
+  `company` varchar(255) NOT NULL,
+  `model` varchar(255) NOT NULL,
+  `details` text NOT NULL,
+  `price` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_user`
+--
+
+CREATE TABLE `tb_user` (
+  `id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `status` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_user`
+--
+
+INSERT INTO `tb_user` (`id`, `username`, `password`, `status`) VALUES
+(1, 'Masud', '1234', 1),
+(2, 'ASHA', 'ASHA123', 0);
 
 --
 -- Indexes for dumped tables
@@ -137,6 +210,18 @@ ALTER TABLE `tb_car`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tb_cosmatics`
+--
+ALTER TABLE `tb_cosmatics`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tb_elc`
+--
+ALTER TABLE `tb_elc`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tb_laptop`
 --
 ALTER TABLE `tb_laptop`
@@ -146,6 +231,18 @@ ALTER TABLE `tb_laptop`
 -- Indexes for table `tb_mobile`
 --
 ALTER TABLE `tb_mobile`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tb_tv`
+--
+ALTER TABLE `tb_tv`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tb_user`
+--
+ALTER TABLE `tb_user`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -162,6 +259,18 @@ ALTER TABLE `tb_book`
 -- AUTO_INCREMENT for table `tb_car`
 --
 ALTER TABLE `tb_car`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `tb_cosmatics`
+--
+ALTER TABLE `tb_cosmatics`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tb_elc`
+--
+ALTER TABLE `tb_elc`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
@@ -174,7 +283,19 @@ ALTER TABLE `tb_laptop`
 -- AUTO_INCREMENT for table `tb_mobile`
 --
 ALTER TABLE `tb_mobile`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `tb_tv`
+--
+ALTER TABLE `tb_tv`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tb_user`
+--
+ALTER TABLE `tb_user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
