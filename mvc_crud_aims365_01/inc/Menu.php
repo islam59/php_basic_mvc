@@ -1,7 +1,3 @@
-<?php 
-  /*$satus= $_SESSION['status'];*/
-?>
-
 <!----------------------------------------------->		
 <nav class="navbar navbar-default menu">
   <div class="container-fluid">
@@ -20,17 +16,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li class="<?php if($pg=='Home'){ echo 'active'; } ?>"><a href="index.php?page=Home">Home</a></li>
-<?php /*
-  if($satus==1){*/
-?>
         <li class="<?php if($pg=='Mobile'){ echo 'active'; } ?>"><a href="index.php?page=Mobile">Mobile</a></li>
         <li class="<?php if($pg=='Laptop'){ echo 'active'; } ?>"><a href="index.php?page=Laptop">Laptop</a></li>
         <li class="<?php if($pg=='Car'){ echo 'active'; } ?>"><a href="index.php?page=Car">Car</a></li>
-<?php /*
-  }else{*/
-?>
-
-
         <li class="<?php if($pg=='Book'){ echo 'active'; } ?>"><a href="index.php?page=Book">Book</a></li>
         <li class="<?php if($pg=='Cosmatics'){ echo 'active'; } ?>"><a href="index.php?page=Cosmatics">Cosmatics</a></li>
         <li class="<?php if($pg=='TV'){ echo 'active'; } ?>"><a href="index.php?page=TV">TV</a></li>
@@ -38,9 +26,6 @@
         <li class="<?php if($pg=='Byke'){ echo 'active'; } ?>"><a href="index.php?page=Byke">Byke</a></li>
         <li class="<?php if($pg=='Furniture'){ echo 'active'; } ?>"><a href="index.php?page=Furniture">Furniture</a></li>
         <li class="<?php if($pg=='Dress'){ echo 'active'; } ?>"><a href="index.php?page=Dress">Dress</a></li>
-<?php 
- /* }*/
-?>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User Option <span class="caret"></span></a>
           <ul class="dropdown-menu">

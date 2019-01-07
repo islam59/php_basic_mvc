@@ -1,5 +1,5 @@
 
-<?php /*INSERT NEW DATA */
+<?php /* update data */
 	if(isset($_POST['update_mobile'])){
 		$id = $_POST['update_id']; 
 		$company = $_POST['company']; 
@@ -33,10 +33,10 @@
 			}
 
 		}
-	}//END OF DATA INSERTING..
+	}//END OF DATA updating..
 ?>
 
-<?php
+<?php /*fetch data id for update*/
 	if(isset($_GET['upid'])){
 		$upid = $_GET['upid']; 
 		$qry_update = "SELECT * FROM tb_mobile WHERE id='$upid'";
@@ -47,7 +47,7 @@
 	}
 ?>
 
-<?php
+<?php /*delete data from database*/
 	if(isset($_GET['delid'])){
 		$delid = $_GET['delid']; 
 		$qry_delete_mobile = "DELETE FROM tb_mobile WHERE id=$delid";
@@ -151,6 +151,13 @@
 	<div class="col-md-8">
 <!-------------------------------->
 <table class="table table-bordered table-striped">
+
+<?php 
+	$mobile_load_qry = "SELECT * FROM tb_mobile";
+	$result = $DB->select($mobile_load_qry); 
+	if($result){
+?>
+
 	<tr>
 		<th>SL</th>
 		<th>Company</th>
@@ -158,10 +165,8 @@
 		<th>Price</th>
 		<th style="width:28%;">Action</th>
 	</tr>
-<?php 
-	$mobile_load_qry = "SELECT * FROM tb_mobile";
-	$result = $DB->select($mobile_load_qry); 
-	if($result){
+<?PHP 
+	
 		$i=0; 
 		while($mobile = $result->fetch_array()){	
 			$i++; 
@@ -204,6 +209,9 @@
 
 <?php 
 		}
+	}ELSE{
+		
+		ECHO '<H1>No Data Found !</h1>';
 	}
 ?>
 
